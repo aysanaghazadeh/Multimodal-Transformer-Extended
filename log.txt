@@ -1,0 +1,594 @@
+Last login: Wed Apr 27 20:00:49 on ttys003
+aysanaghazadeh@Aysans-MacBook-Pro-2 ~ % ssh to aya34@ric-edge-01.sci.pitt.edu
+ssh: Could not resolve hostname to: nodename nor servname provided, or not known
+aysanaghazadeh@Aysans-MacBook-Pro-2 ~ % ssh aya34@ric-edge-01.sci.pitt.edu
+
+   University of Pittsburgh
+Department of Computer Science
+
+Unauthorized access prohibited
+
+aya34@ric-edge-01.sci.pitt.edu's password:
+Last login: Wed Apr 27 16:48:12 2022 from sremote-10-195-74-62.vpn.pitt.edu
+
+       THIS SYSTEM IS FOR THE USE OF AUTHORIZED USERS ONLY.
+
+       Individuals using this computer system without authority, or in
+       excess of their authority, are subject to having all of their
+       activities on this system monitored and recorded by system
+       personnel.
+
+       In the course of monitoring individuals improperly using this
+       system, or in the course of system maintenance, the activities
+       of authorized users may also be monitored.
+
+       Anyone using this system expressly consents to such monitoring
+       and is advised that if such monitoring reveals possible
+       evidence of criminal activity, system personnel may provide the
+       evidence of such monitoring to law enforcement officials.
+
+(1) ric-edge-01 $ ssh aya34@ric-data-01.sci.pitt.edu
+
+   University of Pittsburgh
+Department of Computer Science
+
+Unauthorized access prohibited
+
+aya34@ric-data-01.sci.pitt.edu's password:
+Last login: Wed Apr 27 16:48:39 2022 from ric-edge-01.sci.pitt.edu
+
+       THIS SYSTEM IS FOR THE USE OF AUTHORIZED USERS ONLY.
+
+       Individuals using this computer system without authority, or in
+       excess of their authority, are subject to having all of their
+       activities on this system monitored and recorded by system
+       personnel.
+
+       In the course of monitoring individuals improperly using this
+       system, or in the course of system maintenance, the activities
+       of authorized users may also be monitored.
+
+       Anyone using this system expressly consents to such monitoring
+       and is advised that if such monitoring reveals possible
+       evidence of criminal activity, system personnel may provide the
+       evidence of such monitoring to law enforcement officials.
+
+-bash-4.2$ ls
+Backup  data  perl5  private  public  root
+-bash-4.2$ cd root
+-bash-4.2$ ls
+Archive.zip      OurModel     dataset.py  transformer.py
+MUL_Transfromer  __pycache__  main.py     utils.py
+-bash-4.2$ cd MUL_Transfromer
+-bash-4.2$ ls
+LICENSE  README.md  data  imgs  main.py  modules  pre_trained_models  src
+-bash-4.2$ cd src
+-bash-4.2$ ls
+README.md    ctc.py      eval_metrics.py  train.py
+__pycache__  dataset.py  models.py        utils.py
+-bash-4.2$ vim utils.py
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+LICENSE  README.md  data  imgs  main.py  modules  pre_trained_models  src
+-bash-4.2$ python3 main.py
+/usr/local/lib64/python3.6/site-packages/torch/cuda/__init__.py:80: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  ../c10/cuda/CUDAFunctions.cpp:112.)
+  return torch._C._cuda_getDeviceCount() > 0
+Start loading the data....
+  - Creating new train data
+Traceback (most recent call last):
+  File "main.py", line 117, in <module>
+    train_data = get_data(args, dataset, 'train')
+  File "/afs/cs.pitt.edu/usr0/aya34/root/MUL_Transfromer/src/utils.py", line 13, in get_data
+    data = Multimodal_Datasets(args.data_path, dataset, split, args.aligned)
+  File "/afs/cs.pitt.edu/usr0/aya34/root/MUL_Transfromer/src/dataset.py", line 23, in __init__
+    dataset = pickle.load(open(dataset_path, 'rb'))
+FileNotFoundError: [Errno 2] No such file or directory: 'data/mosei_senti_data_noalign.pkl'
+-bash-4.2$ ls
+LICENSE  README.md  data  imgs  main.py  modules  pre_trained_models  src
+-bash-4.2$ cd data
+-bash-4.2$ ls
+mosei_senti_data.pkl
+-bash-4.2$ ls ../..
+Archive.zip      OurModel     dataset.py  transformer.py
+MUL_Transfromer  __pycache__  main.py     utils.py
+-bash-4.2$ cd ../../..
+-bash-4.2$ ls
+Backup  data  perl5  private  public  root
+-bash-4.2$ cd root
+-bash-4.2$ ls
+Archive.zip      OurModel     dataset.py  transformer.py
+MUL_Transfromer  __pycache__  main.py     utils.py
+-bash-4.2$ cd OurModel
+-bash-4.2$ ls
+VisionFeatureExtractor.py  datapoint.txt  model.pth       utils.py
+__pycache__                dataset.py     output.txt      vocab.pt
+data                       main.py        transformer.py
+-bash-4.2$ cd data
+-bash-4.2$ ls
+iemocap_data.pkl      mosei_senti_data_noalign.pkl  mosei_senti_train_na.dt
+mosei_senti_data.pkl  mosei_senti_test_na.dt        mosei_senti_valid_na.dt
+-bash-4.2$ ls
+iemocap_data.pkl      mosei_senti_data_noalign.pkl  mosei_senti_train_na.dt
+mosei_senti_data.pkl  mosei_senti_test_na.dt        mosei_senti_valid_na.dt
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+VisionFeatureExtractor.py  datapoint.txt  model.pth       utils.py
+__pycache__                dataset.py     output.txt      vocab.pt
+data                       main.py        transformer.py
+-bash-4.2$ cp -r data ../MUL_Transfromer
+cp: error writing '../MUL_Transfromer/data/mosei_senti_data.pkl': Disk quota exceeded
+cp: failed to extend '../MUL_Transfromer/data/mosei_senti_data.pkl': Disk quota exceeded
+cp: error writing '../MUL_Transfromer/data/iemocap_data.pkl': Disk quota exceeded
+cp: failed to extend '../MUL_Transfromer/data/iemocap_data.pkl': Disk quota exceeded
+cp: error writing '../MUL_Transfromer/data/mosei_senti_train_na.dt': Disk quota exceeded
+cp: failed to extend '../MUL_Transfromer/data/mosei_senti_train_na.dt': Disk quota exceeded
+cp: error writing '../MUL_Transfromer/data/mosei_senti_data_noalign.pkl': Disk quota exceeded
+cp: failed to extend '../MUL_Transfromer/data/mosei_senti_data_noalign.pkl': Disk quota exceeded
+cp: error writing '../MUL_Transfromer/data/mosei_senti_valid_na.dt': Disk quota exceeded
+cp: failed to extend '../MUL_Transfromer/data/mosei_senti_valid_na.dt': Disk quota exceeded
+cp: error writing '../MUL_Transfromer/data/mosei_senti_test_na.dt': Disk quota exceeded
+cp: failed to extend '../MUL_Transfromer/data/mosei_senti_test_na.dt': Disk quota exceeded
+-bash-4.2$ mv -r data ../MUL_Transfromer
+mv: invalid option -- 'r'
+Try 'mv --help' for more information.
+-bash-4.2$ mv data ../MUL_Transfromer
+mv: cannot move 'data' to '../MUL_Transfromer/data': File exists
+-bash-4.2$ cd ../MUL_Transfromer
+-bash-4.2$ ls
+LICENSE  README.md  data  imgs  main.py  modules  pre_trained_models  src
+-bash-4.2$ rm data
+rm: cannot remove 'data': Is a directory
+-bash-4.2$ rm -r data
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+Archive.zip      OurModel     dataset.py  transformer.py
+MUL_Transfromer  __pycache__  main.py     utils.py
+-bash-4.2$ cd OurModel
+-bash-4.2$ ls
+VisionFeatureExtractor.py  datapoint.txt  model.pth       utils.py
+__pycache__                dataset.py     output.txt      vocab.pt
+data                       main.py        transformer.py
+-bash-4.2$ mv data ../MUL_Transfromer
+-bash-4.2$ ls
+VisionFeatureExtractor.py  datapoint.txt  main.py    output.txt      utils.py
+__pycache__                dataset.py     model.pth  transformer.py  vocab.pt
+-bash-4.2$ cd ..
+-bash-4.2$ s
+bash: s: command not found...
+-bash-4.2$ ls
+Archive.zip      OurModel     dataset.py  transformer.py
+MUL_Transfromer  __pycache__  main.py     utils.py
+-bash-4.2$ cd MUL_Transfromer
+-bash-4.2$ ls
+LICENSE  README.md  data  imgs  main.py  modules  pre_trained_models  src
+-bash-4.2$ cd data
+-bash-4.2$ ls
+iemocap_data.pkl      mosei_senti_data_noalign.pkl  mosei_senti_train_na.dt
+mosei_senti_data.pkl  mosei_senti_test_na.dt        mosei_senti_valid_na.dt
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+LICENSE  README.md  data  imgs  main.py  modules  pre_trained_models  src
+-bash-4.2$ python3 main.py
+/usr/local/lib64/python3.6/site-packages/torch/cuda/__init__.py:80: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  ../c10/cuda/CUDAFunctions.cpp:112.)
+  return torch._C._cuda_getDeviceCount() > 0
+Start loading the data....
+  - Found cached train data
+  - Found cached valid data
+  - Found cached test data
+Finish loading the data....
+### Note: You are running in unaligned mode.
+/afs/cs.pitt.edu/usr0/aya34/root/MUL_Transfromer/modules/position_embedding.py:21: UserWarning: The number of elements in the out tensor of shape [50] is 50 which does not match the computed number of elements 500. Note that this may occur as a result of rounding error. The out tensor will be resized to a tensor of shape (500,). (Triggered internally at  ../aten/src/ATen/native/RangeFactories.cpp:202.)
+  torch.arange(padding_idx + 1, max_pos, out=getattr(make_positions, buf_name))
+Epoch  1 | Batch  30/680 | Time/Batch(ms) 4531.66 | Train Loss 0.9197
+Epoch  1 | Batch  60/680 | Time/Batch(ms) 4455.10 | Train Loss 0.8873
+Epoch  1 | Batch  90/680 | Time/Batch(ms) 4286.19 | Train Loss 0.9149
+Epoch  1 | Batch 120/680 | Time/Batch(ms) 4251.04 | Train Loss 0.8615
+Epoch  1 | Batch 150/680 | Time/Batch(ms) 4225.95 | Train Loss 0.8545
+Epoch  1 | Batch 180/680 | Time/Batch(ms) 4355.67 | Train Loss 0.8503
+Epoch  1 | Batch 210/680 | Time/Batch(ms) 4242.66 | Train Loss 0.8072
+Epoch  1 | Batch 240/680 | Time/Batch(ms) 4219.24 | Train Loss 0.8438
+Epoch  1 | Batch 270/680 | Time/Batch(ms) 4249.44 | Train Loss 0.7905
+Epoch  1 | Batch 300/680 | Time/Batch(ms) 4339.63 | Train Loss 0.7746
+Epoch  1 | Batch 330/680 | Time/Batch(ms) 4315.06 | Train Loss 0.7411
+Epoch  1 | Batch 360/680 | Time/Batch(ms) 4289.65 | Train Loss 0.7699
+Epoch  1 | Batch 390/680 | Time/Batch(ms) 4229.48 | Train Loss 0.7979
+Epoch  1 | Batch 420/680 | Time/Batch(ms) 4308.06 | Train Loss 0.7651
+Epoch  1 | Batch 450/680 | Time/Batch(ms) 4327.78 | Train Loss 0.8038
+Epoch  1 | Batch 480/680 | Time/Batch(ms) 4306.52 | Train Loss 0.7903
+Epoch  1 | Batch 510/680 | Time/Batch(ms) 4251.44 | Train Loss 0.7798
+Epoch  1 | Batch 540/680 | Time/Batch(ms) 4332.46 | Train Loss 0.7412
+Epoch  1 | Batch 570/680 | Time/Batch(ms) 4354.03 | Train Loss 0.7188
+Epoch  1 | Batch 600/680 | Time/Batch(ms) 4422.36 | Train Loss 0.7257
+Epoch  1 | Batch 630/680 | Time/Batch(ms) 4302.84 | Train Loss 0.7282
+Epoch  1 | Batch 660/680 | Time/Batch(ms) 4224.09 | Train Loss 0.7108
+--------------------------------------------------
+Epoch  1 | Time 3069.1190 sec | Valid Loss 0.6981 | Test Loss 0.7125
+--------------------------------------------------
+Saved model at pre_trained_models/mult.pt!
+Epoch  2 | Batch  30/680 | Time/Batch(ms) 3961.49 | Train Loss 0.7132
+Epoch  2 | Batch  60/680 | Time/Batch(ms) 3747.32 | Train Loss 0.6865
+Epoch  2 | Batch  90/680 | Time/Batch(ms) 3746.06 | Train Loss 0.7091
+Epoch  2 | Batch 120/680 | Time/Batch(ms) 4059.59 | Train Loss 0.7222
+Epoch  2 | Batch 150/680 | Time/Batch(ms) 4322.26 | Train Loss 0.6790
+Epoch  2 | Batch 180/680 | Time/Batch(ms) 4299.74 | Train Loss 0.7297
+Epoch  2 | Batch 210/680 | Time/Batch(ms) 4317.83 | Train Loss 0.7218
+Epoch  2 | Batch 240/680 | Time/Batch(ms) 4299.41 | Train Loss 0.7511
+Epoch  2 | Batch 270/680 | Time/Batch(ms) 4391.92 | Train Loss 0.6986
+Epoch  2 | Batch 300/680 | Time/Batch(ms) 4310.13 | Train Loss 0.6691
+Epoch  2 | Batch 330/680 | Time/Batch(ms) 4204.78 | Train Loss 0.7498
+Epoch  2 | Batch 360/680 | Time/Batch(ms) 4160.90 | Train Loss 0.6976
+Epoch  2 | Batch 390/680 | Time/Batch(ms) 4376.28 | Train Loss 0.7091
+Epoch  2 | Batch 420/680 | Time/Batch(ms) 4278.47 | Train Loss 0.6546
+Epoch  2 | Batch 450/680 | Time/Batch(ms) 4264.57 | Train Loss 0.7062
+Epoch  2 | Batch 480/680 | Time/Batch(ms) 4275.80 | Train Loss 0.6763
+Epoch  2 | Batch 510/680 | Time/Batch(ms) 4254.45 | Train Loss 0.7464
+Epoch  2 | Batch 540/680 | Time/Batch(ms) 4363.64 | Train Loss 0.6843
+Epoch  2 | Batch 570/680 | Time/Batch(ms) 4312.23 | Train Loss 0.6700
+Epoch  2 | Batch 600/680 | Time/Batch(ms) 4362.15 | Train Loss 0.6726
+Epoch  2 | Batch 630/680 | Time/Batch(ms) 4358.79 | Train Loss 0.6600
+Epoch  2 | Batch 660/680 | Time/Batch(ms) 4278.63 | Train Loss 0.6979
+--------------------------------------------------
+Epoch  2 | Time 3011.4751 sec | Valid Loss 0.6831 | Test Loss 0.6794
+--------------------------------------------------
+Saved model at pre_trained_models/mult.pt!
+Epoch  3 | Batch  30/680 | Time/Batch(ms) 3614.32 | Train Loss 0.6933
+Epoch  3 | Batch  60/680 | Time/Batch(ms) 3827.07 | Train Loss 0.6458
+Epoch  3 | Batch  90/680 | Time/Batch(ms) 3832.53 | Train Loss 0.6704
+Epoch  3 | Batch 120/680 | Time/Batch(ms) 3828.96 | Train Loss 0.6524
+Epoch  3 | Batch 150/680 | Time/Batch(ms) 4045.64 | Train Loss 0.6531
+Epoch  3 | Batch 180/680 | Time/Batch(ms) 4124.45 | Train Loss 0.6721
+Epoch  3 | Batch 210/680 | Time/Batch(ms) 4247.89 | Train Loss 0.6780
+Epoch  3 | Batch 240/680 | Time/Batch(ms) 4344.54 | Train Loss 0.6915
+Epoch  3 | Batch 270/680 | Time/Batch(ms) 4475.07 | Train Loss 0.6484
+Epoch  3 | Batch 300/680 | Time/Batch(ms) 4366.59 | Train Loss 0.6451
+Epoch  3 | Batch 330/680 | Time/Batch(ms) 4385.95 | Train Loss 0.6962
+Epoch  3 | Batch 360/680 | Time/Batch(ms) 4357.87 | Train Loss 0.6620
+Epoch  3 | Batch 390/680 | Time/Batch(ms) 4351.79 | Train Loss 0.7185
+Epoch  3 | Batch 420/680 | Time/Batch(ms) 4322.87 | Train Loss 0.6499
+Epoch  3 | Batch 450/680 | Time/Batch(ms) 4337.06 | Train Loss 0.6583
+Epoch  3 | Batch 480/680 | Time/Batch(ms) 4304.15 | Train Loss 0.6549
+Epoch  3 | Batch 510/680 | Time/Batch(ms) 4338.51 | Train Loss 0.6519
+Epoch  3 | Batch 540/680 | Time/Batch(ms) 4497.20 | Train Loss 0.6411
+Epoch  3 | Batch 570/680 | Time/Batch(ms) 4322.98 | Train Loss 0.6911
+Epoch  3 | Batch 600/680 | Time/Batch(ms) 4402.25 | Train Loss 0.6649
+Epoch  3 | Batch 630/680 | Time/Batch(ms) 4410.97 | Train Loss 0.6671
+Epoch  3 | Batch 660/680 | Time/Batch(ms) 4410.64 | Train Loss 0.6495
+--------------------------------------------------
+Epoch  3 | Time 3018.2409 sec | Valid Loss 0.6174 | Test Loss 0.6403
+--------------------------------------------------
+Saved model at pre_trained_models/mult.pt!
+Epoch  4 | Batch  30/680 | Time/Batch(ms) 3677.04 | Train Loss 0.6658
+Epoch  4 | Batch  60/680 | Time/Batch(ms) 3698.96 | Train Loss 0.6570
+Epoch  4 | Batch  90/680 | Time/Batch(ms) 3870.47 | Train Loss 0.6376
+Epoch  4 | Batch 120/680 | Time/Batch(ms) 4107.51 | Train Loss 0.6556
+Epoch  4 | Batch 150/680 | Time/Batch(ms) 4274.30 | Train Loss 0.6694
+Epoch  4 | Batch 180/680 | Time/Batch(ms) 4289.97 | Train Loss 0.6818
+Epoch  4 | Batch 210/680 | Time/Batch(ms) 4305.09 | Train Loss 0.6970
+Epoch  4 | Batch 240/680 | Time/Batch(ms) 4362.65 | Train Loss 0.6236
+Epoch  4 | Batch 270/680 | Time/Batch(ms) 4463.41 | Train Loss 0.6428
+Epoch  4 | Batch 300/680 | Time/Batch(ms) 4301.81 | Train Loss 0.6040
+Epoch  4 | Batch 330/680 | Time/Batch(ms) 4315.07 | Train Loss 0.6747
+Epoch  4 | Batch 360/680 | Time/Batch(ms) 4395.67 | Train Loss 0.7021
+Epoch  4 | Batch 390/680 | Time/Batch(ms) 4450.75 | Train Loss 0.6737
+Epoch  4 | Batch 420/680 | Time/Batch(ms) 4441.53 | Train Loss 0.6385
+Epoch  4 | Batch 450/680 | Time/Batch(ms) 4334.73 | Train Loss 0.6431
+Epoch  4 | Batch 480/680 | Time/Batch(ms) 4308.36 | Train Loss 0.6830
+Epoch  4 | Batch 510/680 | Time/Batch(ms) 4258.67 | Train Loss 0.6260
+Epoch  4 | Batch 540/680 | Time/Batch(ms) 4366.57 | Train Loss 0.6129
+Epoch  4 | Batch 570/680 | Time/Batch(ms) 4350.73 | Train Loss 0.6555
+Epoch  4 | Batch 600/680 | Time/Batch(ms) 4344.46 | Train Loss 0.6170
+Epoch  4 | Batch 630/680 | Time/Batch(ms) 4363.16 | Train Loss 0.6481
+Epoch  4 | Batch 660/680 | Time/Batch(ms) 4415.58 | Train Loss 0.6710
+--------------------------------------------------
+Epoch  4 | Time 3032.4907 sec | Valid Loss 0.6164 | Test Loss 0.6439
+--------------------------------------------------
+Saved model at pre_trained_models/mult.pt!
+Epoch  5 | Batch  30/680 | Time/Batch(ms) 3779.13 | Train Loss 0.6896
+Epoch  5 | Batch  60/680 | Time/Batch(ms) 3859.99 | Train Loss 0.6162
+Epoch  5 | Batch  90/680 | Time/Batch(ms) 3803.57 | Train Loss 0.6785
+Epoch  5 | Batch 120/680 | Time/Batch(ms) 3761.35 | Train Loss 0.6393
+Epoch  5 | Batch 150/680 | Time/Batch(ms) 3988.10 | Train Loss 0.6362
+Epoch  5 | Batch 180/680 | Time/Batch(ms) 4068.44 | Train Loss 0.6289
+Epoch  5 | Batch 210/680 | Time/Batch(ms) 4135.38 | Train Loss 0.6086
+Epoch  5 | Batch 240/680 | Time/Batch(ms) 4244.43 | Train Loss 0.6535
+Epoch  5 | Batch 270/680 | Time/Batch(ms) 4361.93 | Train Loss 0.6545
+Epoch  5 | Batch 300/680 | Time/Batch(ms) 4358.68 | Train Loss 0.6295
+Epoch  5 | Batch 330/680 | Time/Batch(ms) 4325.99 | Train Loss 0.5959
+Epoch  5 | Batch 360/680 | Time/Batch(ms) 4356.04 | Train Loss 0.6436
+Epoch  5 | Batch 390/680 | Time/Batch(ms) 4391.57 | Train Loss 0.6462
+Epoch  5 | Batch 420/680 | Time/Batch(ms) 4357.94 | Train Loss 0.7149
+Epoch  5 | Batch 450/680 | Time/Batch(ms) 4322.22 | Train Loss 0.6581
+Epoch  5 | Batch 480/680 | Time/Batch(ms) 4296.37 | Train Loss 0.6753
+Epoch  5 | Batch 510/680 | Time/Batch(ms) 4450.64 | Train Loss 0.6163
+Epoch  5 | Batch 540/680 | Time/Batch(ms) 4396.78 | Train Loss 0.6604
+Epoch  5 | Batch 570/680 | Time/Batch(ms) 4314.11 | Train Loss 0.6538
+Epoch  5 | Batch 600/680 | Time/Batch(ms) 4339.05 | Train Loss 0.6434
+Epoch  5 | Batch 630/680 | Time/Batch(ms) 4342.49 | Train Loss 0.6674
+Epoch  5 | Batch 660/680 | Time/Batch(ms) 4378.58 | Train Loss 0.6890
+--------------------------------------------------
+Epoch  5 | Time 2998.6483 sec | Valid Loss 0.6386 | Test Loss 0.6495
+--------------------------------------------------
+Epoch  6 | Batch  30/680 | Time/Batch(ms) 3808.92 | Train Loss 0.6088
+Epoch  6 | Batch  60/680 | Time/Batch(ms) 3864.73 | Train Loss 0.6472
+Epoch  6 | Batch  90/680 | Time/Batch(ms) 3846.08 | Train Loss 0.6599
+Epoch  6 | Batch 120/680 | Time/Batch(ms) 4043.22 | Train Loss 0.6300
+Epoch  6 | Batch 150/680 | Time/Batch(ms) 4005.79 | Train Loss 0.6482
+Epoch  6 | Batch 180/680 | Time/Batch(ms) 4119.12 | Train Loss 0.6073
+Epoch  6 | Batch 210/680 | Time/Batch(ms) 4186.07 | Train Loss 0.6685
+Epoch  6 | Batch 240/680 | Time/Batch(ms) 4194.82 | Train Loss 0.6496
+
+  [Restored Apr 28, 2022 at 1:01:00 AM]
+Last login: Thu Apr 28 01:00:57 on console
+aysanaghazadeh@Aysans-MacBook-Pro-2 ~ % ssh aya34@ric-edge-01.sci.pitt.edu
+^C
+aysanaghazadeh@Aysans-MacBook-Pro-2 ~ % ssh aya34@ric-edge-01.sci.pitt.edu
+
+   University of Pittsburgh
+Department of Computer Science
+
+Unauthorized access prohibited
+
+aya34@ric-edge-01.sci.pitt.edu's password:
+Last login: Wed Apr 27 20:36:59 2022 from sremote-10-195-74-62.vpn.pitt.edu
+
+       THIS SYSTEM IS FOR THE USE OF AUTHORIZED USERS ONLY.
+
+       Individuals using this computer system without authority, or in
+       excess of their authority, are subject to having all of their
+       activities on this system monitored and recorded by system
+       personnel.
+
+       In the course of monitoring individuals improperly using this
+       system, or in the course of system maintenance, the activities
+       of authorized users may also be monitored.
+
+       Anyone using this system expressly consents to such monitoring
+       and is advised that if such monitoring reveals possible
+       evidence of criminal activity, system personnel may provide the
+       evidence of such monitoring to law enforcement officials.
+
+(1) ric-edge-01 $ ssh aya34@ric-data-01.sci.pitt.edu
+
+   University of Pittsburgh
+Department of Computer Science
+
+Unauthorized access prohibited
+
+aya34@ric-data-01.sci.pitt.edu's password:
+Permission denied, please try again.
+aya34@ric-data-01.sci.pitt.edu's password:
+Last failed login: Thu Apr 28 01:36:23 EDT 2022 from ric-edge-01.sci.pitt.edu on ssh:notty
+There was 1 failed login attempt since the last successful login.
+Last login: Wed Apr 27 20:40:46 2022 from ric-edge-01.sci.pitt.edu
+
+       THIS SYSTEM IS FOR THE USE OF AUTHORIZED USERS ONLY.
+
+       Individuals using this computer system without authority, or in
+       excess of their authority, are subject to having all of their
+       activities on this system monitored and recorded by system
+       personnel.
+
+       In the course of monitoring individuals improperly using this
+       system, or in the course of system maintenance, the activities
+       of authorized users may also be monitored.
+
+       Anyone using this system expressly consents to such monitoring
+       and is advised that if such monitoring reveals possible
+       evidence of criminal activity, system personnel may provide the
+       evidence of such monitoring to law enforcement officials.
+
+-bash-4.2$ log
+bash: log: command not found...
+-bash-4.2$ ls
+Backup  perl5  private  public  root
+-bash-4.2$ ps
+   PID TTY          TIME CMD
+ 81182 pts/0    00:00:00 bash
+ 81562 pts/0    00:00:00 ps
+-bash-4.2$ ls
+Backup  perl5  private  public  root
+-bash-4.2$ cd root
+-bash-4.2$ ls
+Archive.zip      OurModel     dataset.py  transformer.py
+MUL_Transfromer  __pycache__  main.py     utils.py
+-bash-4.2$ cd MUL_Transfromer
+-bash-4.2$ ls
+LICENSE  README.md  data  imgs  main.py  modules  pre_trained_models  src
+-bash-4.2$ ps
+   PID TTY          TIME CMD
+ 81182 pts/0    00:00:00 bash
+ 84135 pts/0    00:00:00 ps
+-bash-4.2$ ls
+[Invalid UTF-8] bash: \xd8ls: command not found...
+-bash-4.2$ ls
+LICENSE  README.md  data  imgs  main.py  modules  pre_trained_models  src
+-bash-4.2$ pwd
+/afs/cs.pitt.edu/usr0/aya34/root/MUL_Transfromer
+-bash-4.2$ python3 main.py
+Traceback (most recent call last):
+  File "main.py", line 2, in <module>
+    from src.utils import *
+  File "/afs/cs.pitt.edu/usr0/aya34/root/MUL_Transfromer/src/utils.py", line 5, in <module>
+    from dataset import Multimodal_Datasets
+ModuleNotFoundError: No module named 'dataset'
+-bash-4.2$ pwd
+/afs/cs.pitt.edu/usr0/aya34/root/MUL_Transfromer
+-bash-4.2$ cd scr
+-bash: cd: scr: No such file or directory
+-bash-4.2$ cd src
+-bash-4.2$ ls
+README.md    ctc.py      eval_metrics.py  train.py
+__pycache__  dataset.py  models.py        utils.py
+-bash-4.2$ vim utils.py
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+LICENSE  README.md  data  imgs  main.py  modules  pre_trained_models  src
+-bash-4.2$ python3 main.py
+/usr/local/lib64/python3.6/site-packages/torch/cuda/__init__.py:80: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  ../c10/cuda/CUDAFunctions.cpp:112.)
+  return torch._C._cuda_getDeviceCount() > 0
+Start loading the data....
+  - Found cached train data
+  - Found cached valid data
+  - Found cached test data
+Finish loading the data....
+### Note: You are running in unaligned mode.
+/afs/cs.pitt.edu/usr0/aya34/root/MUL_Transfromer/modules/position_embedding.py:21: UserWarning: The number of elements in the out tensor of shape [50] is 50 which does not match the computed number of elements 500. Note that this may occur as a result of rounding error. The out tensor will be resized to a tensor of shape (500,). (Triggered internally at  ../aten/src/ATen/native/RangeFactories.cpp:202.)
+  torch.arange(padding_idx + 1, max_pos, out=getattr(make_positions, buf_name))
+Epoch  1 | Batch  30/637 | Time/Batch(ms) 4241.28 | Train Loss 0.8306
+Epoch  1 | Batch  60/637 | Time/Batch(ms) 3960.09 | Train Loss 0.9093
+Epoch  1 | Batch  90/637 | Time/Batch(ms) 4030.24 | Train Loss 0.8234
+Epoch  1 | Batch 120/637 | Time/Batch(ms) 4046.86 | Train Loss 0.8411
+Epoch  1 | Batch 150/637 | Time/Batch(ms) 4122.48 | Train Loss 0.8450
+Epoch  1 | Batch 180/637 | Time/Batch(ms) 4099.65 | Train Loss 0.8039
+Epoch  1 | Batch 210/637 | Time/Batch(ms) 4120.12 | Train Loss 0.8180
+Epoch  1 | Batch 240/637 | Time/Batch(ms) 4200.83 | Train Loss 0.8434
+Epoch  1 | Batch 270/637 | Time/Batch(ms) 4229.55 | Train Loss 0.8246
+Epoch  1 | Batch 300/637 | Time/Batch(ms) 4168.20 | Train Loss 0.7894
+Epoch  1 | Batch 330/637 | Time/Batch(ms) 4206.96 | Train Loss 0.7925
+Epoch  1 | Batch 360/637 | Time/Batch(ms) 4230.27 | Train Loss 0.7925
+Epoch  1 | Batch 390/637 | Time/Batch(ms) 4194.38 | Train Loss 0.8040
+Epoch  1 | Batch 420/637 | Time/Batch(ms) 4151.01 | Train Loss 0.8210
+Epoch  1 | Batch 450/637 | Time/Batch(ms) 4141.06 | Train Loss 0.8176
+Epoch  1 | Batch 480/637 | Time/Batch(ms) 4287.19 | Train Loss 0.8047
+Epoch  1 | Batch 510/637 | Time/Batch(ms) 4117.85 | Train Loss 0.7981
+Epoch  1 | Batch 540/637 | Time/Batch(ms) 4231.16 | Train Loss 0.7503
+Epoch  1 | Batch 570/637 | Time/Batch(ms) 4083.10 | Train Loss 0.7856
+Epoch  1 | Batch 600/637 | Time/Batch(ms) 4141.23 | Train Loss 0.7811
+Epoch  1 | Batch 630/637 | Time/Batch(ms) 4197.69 | Train Loss 0.7737
+Traceback (most recent call last):
+  File "main.py", line 150, in <module>
+    test_loss = train.initiate(hyp_params, train_loader, valid_loader, test_loader)
+  File "/afs/cs.pitt.edu/usr0/aya34/root/MUL_Transfromer/src/train.py", line 63, in initiate
+    return train_model(settings, hyp_params, train_loader, valid_loader, test_loader)
+  File "/afs/cs.pitt.edu/usr0/aya34/root/MUL_Transfromer/src/train.py", line 238, in train_model
+    val_loss, _, _ = evaluate(model, ctc_a2l_module, ctc_v2l_module, criterion, test=False)
+  File "/afs/cs.pitt.edu/usr0/aya34/root/MUL_Transfromer/src/train.py", line 200, in evaluate
+    sample_ind, text, audio, vision = batch_X
+ValueError: too many values to unpack (expected 4)
+-bash-4.2$ cd src
+-bash-4.2$ ls
+README.md  __pycache__  ctc.py  dataset.py  eval_metrics.py  models.py  train.py  utils.py
+-bash-4.2$ vim train.py
+-bash-4.2$ cd ..
+-bash-4.2$ python3 main.py
+/usr/local/lib64/python3.6/site-packages/torch/cuda/__init__.py:80: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  ../c10/cuda/CUDAFunctions.cpp:112.)
+  return torch._C._cuda_getDeviceCount() > 0
+Start loading the data....
+  - Found cached train data
+  - Found cached valid data
+  - Found cached test data
+Finish loading the data....
+### Note: You are running in unaligned mode.
+/afs/cs.pitt.edu/usr0/aya34/root/MUL_Transfromer/modules/position_embedding.py:21: UserWarning: The number of elements in the out tensor of shape [50] is 50 which does not match the computed number of elements 500. Note that this may occur as a result of rounding error. The out tensor will be resized to a tensor of shape (500,). (Triggered internally at  ../aten/src/ATen/native/RangeFactories.cpp:202.)
+  torch.arange(padding_idx + 1, max_pos, out=getattr(make_positions, buf_name))
+Epoch  1 | Batch  30/637 | Time/Batch(ms) 4458.58 | Train Loss 0.8306
+Epoch  1 | Batch  60/637 | Time/Batch(ms) 4149.42 | Train Loss 0.9093
+Epoch  1 | Batch  90/637 | Time/Batch(ms) 4057.00 | Train Loss 0.8234
+Epoch  1 | Batch 120/637 | Time/Batch(ms) 4019.12 | Train Loss 0.8411
+Epoch  1 | Batch 150/637 | Time/Batch(ms) 4111.51 | Train Loss 0.8450
+Epoch  1 | Batch 180/637 | Time/Batch(ms) 4250.69 | Train Loss 0.8039
+Epoch  1 | Batch 210/637 | Time/Batch(ms) 4211.16 | Train Loss 0.8180
+Epoch  1 | Batch 240/637 | Time/Batch(ms) 4187.43 | Train Loss 0.8434
+Epoch  1 | Batch 270/637 | Time/Batch(ms) 4198.69 | Train Loss 0.8246
+Epoch  1 | Batch 300/637 | Time/Batch(ms) 4142.51 | Train Loss 0.7894
+Epoch  1 | Batch 330/637 | Time/Batch(ms) 4206.68 | Train Loss 0.7925
+Epoch  1 | Batch 360/637 | Time/Batch(ms) 4318.01 | Train Loss 0.7925
+Epoch  1 | Batch 390/637 | Time/Batch(ms) 4241.49 | Train Loss 0.8040
+Epoch  1 | Batch 420/637 | Time/Batch(ms) 4149.58 | Train Loss 0.8210
+Epoch  1 | Batch 450/637 | Time/Batch(ms) 4126.46 | Train Loss 0.8176
+Epoch  1 | Batch 480/637 | Time/Batch(ms) 4201.38 | Train Loss 0.8047
+Epoch  1 | Batch 510/637 | Time/Batch(ms) 4263.17 | Train Loss 0.7981
+Epoch  1 | Batch 540/637 | Time/Batch(ms) 4262.32 | Train Loss 0.7503
+Epoch  1 | Batch 570/637 | Time/Batch(ms) 4290.05 | Train Loss 0.7856
+Epoch  1 | Batch 600/637 | Time/Batch(ms) 4204.49 | Train Loss 0.7811
+Epoch  1 | Batch 630/637 | Time/Batch(ms) 4288.42 | Train Loss 0.7737
+--------------------------------------------------
+Epoch  1 | Time 2816.2486 sec | Valid Loss 0.9873 | Test Loss 0.9753
+--------------------------------------------------
+Saved model at pre_trained_models/mult.pt!
+Epoch  2 | Batch  30/637 | Time/Batch(ms) 4263.11 | Train Loss 0.7615
+Epoch  2 | Batch  60/637 | Time/Batch(ms) 4265.07 | Train Loss 0.7440
+Epoch  2 | Batch  90/637 | Time/Batch(ms) 4235.95 | Train Loss 0.7314
+Epoch  2 | Batch 120/637 | Time/Batch(ms) 4258.88 | Train Loss 0.7841
+Epoch  2 | Batch 150/637 | Time/Batch(ms) 4256.55 | Train Loss 0.7307
+Epoch  2 | Batch 180/637 | Time/Batch(ms) 4283.75 | Train Loss 0.7489
+Epoch  2 | Batch 210/637 | Time/Batch(ms) 4313.27 | Train Loss 0.7542
+Epoch  2 | Batch 240/637 | Time/Batch(ms) 4266.93 | Train Loss 0.7069
+Epoch  2 | Batch 270/637 | Time/Batch(ms) 4345.84 | Train Loss 0.7405
+Epoch  2 | Batch 300/637 | Time/Batch(ms) 4442.91 | Train Loss 0.6843
+Epoch  2 | Batch 330/637 | Time/Batch(ms) 4394.93 | Train Loss 0.7483
+Epoch  2 | Batch 360/637 | Time/Batch(ms) 4816.92 | Train Loss 0.7227
+Epoch  2 | Batch 390/637 | Time/Batch(ms) 4744.30 | Train Loss 0.7302
+Epoch  2 | Batch 420/637 | Time/Batch(ms) 4408.79 | Train Loss 0.6573
+Epoch  2 | Batch 450/637 | Time/Batch(ms) 4260.16 | Train Loss 0.7156
+Epoch  2 | Batch 480/637 | Time/Batch(ms) 4245.30 | Train Loss 0.6959
+Epoch  2 | Batch 510/637 | Time/Batch(ms) 4400.52 | Train Loss 0.7317
+Epoch  2 | Batch 540/637 | Time/Batch(ms) 4357.68 | Train Loss 0.7422
+Epoch  2 | Batch 570/637 | Time/Batch(ms) 4349.31 | Train Loss 0.6992
+Epoch  2 | Batch 600/637 | Time/Batch(ms) 4356.01 | Train Loss 0.6967
+Epoch  2 | Batch 630/637 | Time/Batch(ms) 4300.64 | Train Loss 0.7020
+--------------------------------------------------
+Epoch  2 | Time 2911.9084 sec | Valid Loss 0.6736 | Test Loss 0.7090
+--------------------------------------------------
+Saved model at pre_trained_models/mult.pt!
+Epoch  3 | Batch  30/637 | Time/Batch(ms) 4551.64 | Train Loss 0.7096
+Epoch  3 | Batch  60/637 | Time/Batch(ms) 4345.11 | Train Loss 0.6787
+Epoch  3 | Batch  90/637 | Time/Batch(ms) 4441.76 | Train Loss 0.6699
+Epoch  3 | Batch 120/637 | Time/Batch(ms) 4232.43 | Train Loss 0.7334
+Epoch  3 | Batch 150/637 | Time/Batch(ms) 4285.38 | Train Loss 0.7106
+Epoch  3 | Batch 180/637 | Time/Batch(ms) 4267.33 | Train Loss 0.6781
+Epoch  3 | Batch 210/637 | Time/Batch(ms) 4342.05 | Train Loss 0.6898
+Epoch  3 | Batch 240/637 | Time/Batch(ms) 4307.03 | Train Loss 0.6951
+Epoch  3 | Batch 270/637 | Time/Batch(ms) 4280.70 | Train Loss 0.7209
+Epoch  3 | Batch 300/637 | Time/Batch(ms) 4290.61 | Train Loss 0.6714
+Epoch  3 | Batch 330/637 | Time/Batch(ms) 4270.04 | Train Loss 0.6824
+Epoch  3 | Batch 360/637 | Time/Batch(ms) 4298.22 | Train Loss 0.6416
+Epoch  3 | Batch 390/637 | Time/Batch(ms) 4343.85 | Train Loss 0.6857
+Epoch  3 | Batch 420/637 | Time/Batch(ms) 4345.36 | Train Loss 0.6749
+Epoch  3 | Batch 450/637 | Time/Batch(ms) 4270.67 | Train Loss 0.6629
+Epoch  3 | Batch 480/637 | Time/Batch(ms) 4347.10 | Train Loss 0.6916
+Epoch  3 | Batch 510/637 | Time/Batch(ms) 4359.29 | Train Loss 0.6940
+Epoch  3 | Batch 540/637 | Time/Batch(ms) 4417.92 | Train Loss 0.6908
+Epoch  3 | Batch 570/637 | Time/Batch(ms) 4265.36 | Train Loss 0.7001
+Epoch  3 | Batch 600/637 | Time/Batch(ms) 4384.50 | Train Loss 0.6891
+Epoch  3 | Batch 630/637 | Time/Batch(ms) 4281.39 | Train Loss 0.6917
+--------------------------------------------------
+Epoch  3 | Time 2896.0684 sec | Valid Loss 0.6635 | Test Loss 0.6723
+--------------------------------------------------
+Saved model at pre_trained_models/mult.pt!
+Epoch  4 | Batch  30/637 | Time/Batch(ms) 4463.58 | Train Loss 0.6589
+Epoch  4 | Batch  60/637 | Time/Batch(ms) 4485.05 | Train Loss 0.6572
+Epoch  4 | Batch  90/637 | Time/Batch(ms) 4336.55 | Train Loss 0.6193
+Epoch  4 | Batch 120/637 | Time/Batch(ms) 4396.55 | Train Loss 0.6832
+Epoch  4 | Batch 150/637 | Time/Batch(ms) 4321.19 | Train Loss 0.6762
+Epoch  4 | Batch 180/637 | Time/Batch(ms) 4328.99 | Train Loss 0.6702
+Epoch  4 | Batch 210/637 | Time/Batch(ms) 4330.95 | Train Loss 0.6687
+Epoch  4 | Batch 240/637 | Time/Batch(ms) 4336.24 | Train Loss 0.6043
+Epoch  4 | Batch 270/637 | Time/Batch(ms) 4407.14 | Train Loss 0.6540
+Epoch  4 | Batch 300/637 | Time/Batch(ms) 4344.40 | Train Loss 0.6596
+Epoch  4 | Batch 330/637 | Time/Batch(ms) 4279.96 | Train Loss 0.6775
+Epoch  4 | Batch 360/637 | Time/Batch(ms) 4260.00 | Train Loss 0.7023
+Epoch  4 | Batch 390/637 | Time/Batch(ms) 4350.81 | Train Loss 0.6627
+Epoch  4 | Batch 420/637 | Time/Batch(ms) 4326.45 | Train Loss 0.6848
+Epoch  4 | Batch 450/637 | Time/Batch(ms) 4379.35 | Train Loss 0.6718
+Epoch  4 | Batch 480/637 | Time/Batch(ms) 4287.69 | Train Loss 0.6610
+Epoch  4 | Batch 510/637 | Time/Batch(ms) 4350.12 | Train Loss 0.6366
+Epoch  4 | Batch 540/637 | Time/Batch(ms) 4249.68 | Train Loss 0.7023
+Epoch  4 | Batch 570/637 | Time/Batch(ms) 4210.21 | Train Loss 0.6503
+Epoch  4 | Batch 600/637 | Time/Batch(ms) 4436.11 | Train Loss 0.5847
+Epoch  4 | Batch 630/637 | Time/Batch(ms) 4301.00 | Train Loss 0.6072
+--------------------------------------------------
+Epoch  4 | Time 2899.2693 sec | Valid Loss 0.6210 | Test Loss 0.6360
+--------------------------------------------------
+Saved model at pre_trained_models/mult.pt!
+Epoch  5 | Batch  30/637 | Time/Batch(ms) 4307.85 | Train Loss 0.6666
+Epoch  5 | Batch  60/637 | Time/Batch(ms) 4260.37 | Train Loss 0.6346
+Epoch  5 | Batch  90/637 | Time/Batch(ms) 4236.51 | Train Loss 0.6578
+Epoch  5 | Batch 120/637 | Time/Batch(ms) 4238.23 | Train Loss 0.6367
+Epoch  5 | Batch 150/637 | Time/Batch(ms) 4345.17 | Train Loss 0.6381
+Epoch  5 | Batch 180/637 | Time/Batch(ms) 4270.84 | Train Loss 0.6577
+Epoch  5 | Batch 210/637 | Time/Batch(ms) 4301.54 | Train Loss 0.6201
+Epoch  5 | Batch 240/637 | Time/Batch(ms) 4246.45 | Train Loss 0.6334
+Epoch  5 | Batch 270/637 | Time/Batch(ms) 4199.95 | Train Loss 0.6552
+Epoch  5 | Batch 300/637 | Time/Batch(ms) 4383.51 | Train Loss 0.6395
+
